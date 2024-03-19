@@ -10,6 +10,7 @@ def quick_select(array, k):
 
     # Randomly select a pivot element
     pivot_index = random.randint(0, len(array) - 1)
+    # pivot_index = 0
     pivot = array[pivot_index]
 
     # Partition the array around the pivot

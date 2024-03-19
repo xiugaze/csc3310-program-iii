@@ -26,5 +26,9 @@ def test_quick_select_random_elements():
     k = 7
     assert quick_select(array, k) == sorted(array)[k - 1]
 
+def test_homogeneous():
+    array = [10, 10, 10, 10, 10, 10, 10, 10]
+    k = 1
+    assert quick_select(array, k) == sorted(array)[k - 1]
 
 pytest.main()
