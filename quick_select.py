@@ -31,6 +31,7 @@ def partition(array, pivot):
     for num in array:
         if num < pivot:
             left.append(num)
-        elif num > pivot:
+        #elif num > pivot:
+        elif num >= pivot:
             right.append(num)
     return left, right
