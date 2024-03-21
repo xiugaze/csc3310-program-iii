@@ -1,6 +1,5 @@
 import random
 
-
 def quick_select(array, k):
     # Handle base cases
     if len(array) == 1:
@@ -14,24 +13,24 @@ def quick_select(array, k):
     pivot = array[pivot_index]
 
     # Partition the array around the pivot
-    left, right = partition(array, pivot)
+    left, same, right = partition(array, pivot)
 
     # Determine the position of the k-th smallest element relative to the pivot
-    left_len = len(left)
-    if k <= left_len:
+    if k <= len(left):
         return quick_select(left, k)
-    elif k == left_len + 1:
+    elif k == len(left) + 1:
         return pivot
     else:
-        return quick_select(right, k - left_len - 1)
+        return quick_select(right, k - len(left) - len(same))
 
 
 def partition(array, pivot):
-    left, right = [], []
+    left, same, right = [], [], []
     for num in array:
         if num < pivot:
             left.append(num)
-        #elif num > pivot:
-        elif num >= pivot:
+        elif num > pivot:
             right.append(num)
-    return left, right
+        else:
+            same.append(num)
+    return left, same, right
