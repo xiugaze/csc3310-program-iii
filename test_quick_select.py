@@ -22,13 +22,15 @@ def test_quick_select_negative_numbers():
 
 
 def test_quick_select_random_elements():
-    array = random.sample(range(1, 101), 10)
+    array = [random.choice(range(100)) for _ in range(10)]
     k = 7
     assert quick_select(array, k) == sorted(array)[k - 1]
+
 
 def test_homogeneous():
     array = [10, 10, 10, 10, 10, 10, 10, 10]
     k = 1
     assert quick_select(array, k) == sorted(array)[k - 1]
+
 
 pytest.main()

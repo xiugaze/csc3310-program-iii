@@ -1,5 +1,6 @@
 import random
 
+
 def quick_select(array, k):
     # Handle base cases
     if len(array) == 1:
